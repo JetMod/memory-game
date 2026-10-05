@@ -1,6 +1,6 @@
 const STORAGE_KEY = 'memory-game-scores';
 
-export function getScores() {
+function getScores() {
   try {
     const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
     return Array.isArray(data) ? data : [];
@@ -9,7 +9,7 @@ export function getScores() {
   }
 }
 
-export function saveScore(moves) {
+function saveScore(moves) {
   const scores = getScores();
   scores.push({
     moves,
@@ -24,7 +24,7 @@ export function saveScore(moves) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(scores.slice(0, 10)));
 }
 
-export function formatDate(iso) {
+function formatDate(iso) {
   const d = new Date(iso);
   const day = String(d.getDate()).padStart(2, '0');
   const month = String(d.getMonth() + 1).padStart(2, '0');

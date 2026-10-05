@@ -1,6 +1,3 @@
-import { createGame, TOTAL_PAIRS } from './game.js';
-import { getScores, saveScore, formatDate } from './storage.js';
-
 let movesEl;
 let pairsEl;
 let boardEl;

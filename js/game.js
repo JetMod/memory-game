@@ -1,6 +1,6 @@
 const SYMBOLS = ['🦊', '🦉', '🦌', '🐿️', '🍄', '🌲', '🍃', '🌙'];
-export const TOTAL_PAIRS = 8;
-export const MISMATCH_DELAY = 1000;
+const TOTAL_PAIRS = 8;
+const MISMATCH_DELAY = 1000;
 
 function shuffle(arr) {
   const list = arr.slice();
@@ -13,7 +13,7 @@ function shuffle(arr) {
   return list;
 }
 
-export function createDeck() {
+function createDeck() {
   const deck = [];
   SYMBOLS.forEach((symbol) => {
     deck.push({ symbol });
@@ -29,7 +29,7 @@ export function createDeck() {
   }));
 }
 
-export function createGame(handlers) {
+function createGame(handlers) {
   let cards = [];
   let firstCard = null;
   let secondCard = null;
